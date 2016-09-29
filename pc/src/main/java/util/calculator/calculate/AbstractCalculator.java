@@ -2,7 +2,7 @@ package util.calculator.calculate;
 
 /**
  * Created by Bruce-Jiang on 2016/9/29.
- *
+ * 顶级抽象类，包含一个四则运算方法
  */
 public abstract class AbstractCalculator {
     /**

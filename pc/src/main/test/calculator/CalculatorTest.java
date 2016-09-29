@@ -2,6 +2,8 @@ package calculator;
 
 import org.junit.Test;
 import util.calculator.calculate.AbstractCalculator;
+import util.calculator.calculate.Fraction;
+import util.calculator.calculate.FractionCalculator;
 import util.calculator.calculate.GeneralCalculator;
 
 /**
@@ -9,8 +11,8 @@ import util.calculator.calculate.GeneralCalculator;
  *
  */
 public class CalculatorTest {
-    @Test
-    public void test(){
+    //@Test
+    public void testGeneralCalculator(){
         AbstractCalculator ac = new GeneralCalculator();
         //验证 接受
         String exp1 = "2+((3+4)*2-22)/2*3";
@@ -33,5 +35,18 @@ public class CalculatorTest {
         String re5 = ac.arithmetic(exp5).toString();
         System.out.println(re5);
 
+    }
+
+
+    @Test
+    public void testFracationCalculator(){
+        AbstractCalculator ac = new FractionCalculator();
+        String exp1 = "3 + 4 + 5 * 7&5 + 10";
+            try {
+            Fraction fraction = (Fraction)ac.arithmetic(exp1);
+            System.out.println(fraction.getNumerator() + ":"+fraction.getDenominator());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
