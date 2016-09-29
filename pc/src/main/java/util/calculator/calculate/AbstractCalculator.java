@@ -5,5 +5,10 @@ package util.calculator.calculate;
  *
  */
 public abstract class AbstractCalculator {
+    /**
+     * 抽象方法，用于统一计算，各种类型的数据以及各种类型的计算
+     * @param exp 表达式
+     * @return
+     */
     public abstract Object arithmetic(String exp);
 }
