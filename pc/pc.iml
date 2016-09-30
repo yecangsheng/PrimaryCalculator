@@ -12,6 +12,7 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/src/main/conf" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -23,12 +24,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/conf" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.53" level="application_server_libraries" />
     <orderEntry type="library" name="org.apache.maven.surefire:surefire-junit47:2.19.1" level="project" />
-    <orderEntry type="library" name="org.apache.logging.log4j:log4j-jcl:2.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="mysql:mysql-connector-java:5.1.39" level="project" />
   </component>
 </module>

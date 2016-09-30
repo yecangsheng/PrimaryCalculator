@@ -1,7 +1,7 @@
 package util.calculator.calculate;
 
-import util.calculator.CommonTools;
-import util.calculator.CustomizeException;
+import util.CommonTools;
+import util.CustomizeException;
 
 /**
  * Created by Bruce-Jiang on 2016/9/29.

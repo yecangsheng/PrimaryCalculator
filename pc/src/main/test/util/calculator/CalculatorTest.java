@@ -1,4 +1,4 @@
-package calculator;
+package util.calculator;
 
 import org.junit.Test;
 import util.calculator.calculate.AbstractCalculator;

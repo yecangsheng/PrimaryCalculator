@@ -1,6 +1,6 @@
 package util.calculator.calculate;
 
-import util.calculator.CustomizeException;
+import util.CustomizeException;
 
 /**
  * Created by Bruce-Jiang on 2016/9/29.

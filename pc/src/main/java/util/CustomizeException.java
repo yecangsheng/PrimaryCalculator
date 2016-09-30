@@ -1,4 +1,4 @@
-package util.calculator;
+package util;
 
 /**
  * Created by Bruce-Jiang on 2016/9/29.

@@ -1,7 +1,7 @@
-package calculator;
+package util.calculator;
 
 import org.junit.Test;
-import util.calculator.CustomizeException;
+import util.CustomizeException;
 import util.calculator.calculate.Fraction;
 import util.calculator.calculate.FractionOperation;
 import util.calculator.calculate.Operation;
