@@ -9,9 +9,20 @@
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
+<<<<<<< HEAD
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.39</version>
+=======
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+>>>>>>> c28651426c4250c3da6d6c4a3c304228be301163
     </dependency>
   </dependencies>
   <build>
