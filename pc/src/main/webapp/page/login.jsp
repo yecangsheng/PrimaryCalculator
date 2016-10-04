@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +48,7 @@
 
                     <div class="space-6"></div>
 
-                    <form id="fLogin" action="UserServlet" method="post">
+                    <form id="fLogin" action="UserLoginServlet" method="post">
                       <fieldset>
                         <label class="block clearfix"> <span
                           class="block input-icon input-icon-right">
@@ -86,7 +90,9 @@
                       </fieldset>
                       <div class="social-or-login center">
                         <span class="bigger-110">身份</span>
+
                       </div>
+                      <div> ${requestScope.get("message")}</div>
                       <div class="social-login center ">
                           <select id="uIdentity" name="uIdentity"
                             class="selectpicker show-tick form-control">
@@ -175,32 +181,43 @@
                     <div class="space-6"></div>
                     <p>输入你的注册邮箱</p>
 
-                    <form>
+                    <form id="register" action="" method="post">
                       <fieldset>
                         <label class="block clearfix"> <span
                           class="block input-icon input-icon-right">
                             <input type="email" class="form-control"
-                            placeholder="Email" /> <i
+                            placeholder="Email" name="email" id="email"/> <i
                             class="icon-envelope"></i>
                         </span>
                         </label> <label class="block clearfix"> <span
                           class="block input-icon input-icon-right">
                             <input type="text" class="form-control"
-                            placeholder="Username" /> <i
+                            placeholder="Nickname" name="nickname" id="nickname"/> <i
                             class="icon-user"></i>
                         </span>
                         </label> <label class="block clearfix"> <span
                           class="block input-icon input-icon-right">
                             <input type="password" class="form-control"
-                            placeholder="Password" /> <i
+                            placeholder="Password"  name="password" id="password"/> <i
                             class="icon-lock"></i>
                         </span>
                         </label> <label class="block clearfix"> <span
                           class="block input-icon input-icon-right">
                             <input type="password" class="form-control"
-                            placeholder="Repeat password" /> <i
+                            placeholder="Repeat password" name="repassword" id="repassword"/> <i
                             class="icon-retweet"></i>
                         </span>
+                        <div class="social-or-login center">
+                          <span class="bigger-110">身份</span>
+
+                        </div>
+                        <div class="social-login center ">
+                          <select id="identity" name="identity"
+                                  class="selectpicker show-tick form-control">
+                            <option value="1" selected>学生</option>
+                            <option value="2">其它</option>
+                          </select>
+                        </div>
                         </label> <label class="block"> <input
                           type="checkbox" class="ace" /> <span
                           class="lbl"> I accept the <a href="#">User
@@ -209,17 +226,22 @@
                         </label>
 
                         <div class="space-24"></div>
-
                         <div class="clearfix">
                           <button type="reset"
                             class="width-30 pull-left btn btn-sm">
                             <i class="icon-refresh"></i> 重置
                           </button>
 
-                          <button type="button"
+                          <button type="button"  onclick="register()"
                             class="width-65 pull-right btn btn-sm btn-success">
                             注册 <i class="icon-arrow-right icon-on-right"></i>
                           </button>
+                          <script type="application/javascript">
+                            //注册在客户端进行验证
+                            function register(){
+                              document.getElementById("register").submit();
+                            }
+                          </script>
                         </div>
                       </fieldset>
                     </form>

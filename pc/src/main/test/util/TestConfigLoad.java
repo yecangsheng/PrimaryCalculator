@@ -14,7 +14,7 @@ public class TestConfigLoad {
     @Test
     public void testConfigLoad(){
         String filePath = "F:\\source\\git_work_space\\PrimaryCalculator\\pc\\src\\main\\java\\util\\sql\\sqlconfig.properties";
-        Properties properties = ConfigLoad.getInstance().loadConfig(new File(filePath));
-        System.out.println(properties.toString());
+        //Properties properties = ConfigLoad.getInstance().loadConfig(new File(filePath));
+       //System.out.println(properties.toString());
     }
 }
