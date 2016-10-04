@@ -3,6 +3,7 @@ package util.sql;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -16,13 +17,13 @@ public final class ConfigLoad {
     public static ConfigLoad getInstance(){
         return instance;
     }
-    public Properties loadConfig(File filePath){
+    public Properties loadConfig(InputStream inputStream){
         Properties properties = new Properties();
         try{
-            properties.load(new FileInputStream(filePath));
+            properties.load(inputStream);
         }catch(IOException e){
             e.printStackTrace();
-            //登机日志
+            //登记日志
         }
         return properties;
     }
