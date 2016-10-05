@@ -74,5 +74,21 @@
   </dependencies>
   <build>
     <finalName>pc</finalName>
+
+    <resources>
+      <resource>
+        <directory>src/main/java/util/data</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.txt</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/java/util/sql</directory>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>
