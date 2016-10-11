@@ -44,3 +44,5 @@ DESC  expression;
 
 #查询全部数据记录
 SELECT * FROM  expression;
+
+
