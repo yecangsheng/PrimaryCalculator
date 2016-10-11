@@ -45,4 +45,12 @@ DESC  expression;
 #查询全部数据记录
 SELECT * FROM  expression;
 
+CREATE TABLE record (
+  id INT NOT NULL  PRIMARY KEY  AUTO_INCREMENT,
+  e_id INT NOT NULL ,
+  u_id INT NOT NULL ,
+  result VARCHAR(10) NOT NULL  DEFAULT '',
+  r_time VARCHAR(25) NOT NULL DEFAULT '',
+  r_num INT NOT NULL DEFAULT '1'
+)ENGINE = InnoDB , CHAR SET =utf8
 
