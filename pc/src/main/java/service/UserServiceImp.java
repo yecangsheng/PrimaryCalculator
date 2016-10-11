@@ -15,7 +15,7 @@ public class UserServiceImp extends UserService{
     @Override
     public User login(User user) {
         User user1 = null;
-        String sql = "SELECT u_mail as mail, u_nickname as nickname, u_identity as identity FROM user WHERE"
+        String sql = "SELECT id, u_mail as mail, u_nickname as nickname, u_identity as identity FROM user WHERE"
             +" u_mail = ? AND u_password = ? AND user.u_identity = ?";
         DBSqlExe dbConn = new DBSqlExe();
         try{
@@ -24,6 +24,7 @@ public class UserServiceImp extends UserService{
             if(list.size()>=1) {
                 Map<String, Object> map = list.get(0);
                 user1 = new User();
+                user1.setId(Integer.parseInt(map.get("id").toString()));
                 user1.setuEmail(map.get("mail").toString());
                 user1.setuNickname(map.get("nickname").toString());
                 user.setuIdentity(Integer.parseInt(map.get("identity").toString()));

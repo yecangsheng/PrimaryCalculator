@@ -22,6 +22,11 @@ public class Expression {
      */
     private int eRank;
 
+    /**
+     * 做题提示
+     */
+    private String eTip;
+
     public Expression(){
 
     }
@@ -30,6 +35,13 @@ public class Expression {
         this.eExpre = eExpre;
         this.eResult = eResult;
         this.eRank = eRank;
+    }
+
+    public Expression(String eExpre,String eResult,int eRank, String eTip){
+        this.eExpre = eExpre;
+        this.eResult = eResult;
+        this.eRank = eRank;
+        this.eTip = eTip;
     }
 
     public int getId() {
@@ -62,5 +74,24 @@ public class Expression {
 
     public void seteRank(int eRank) {
         this.eRank = eRank;
+    }
+
+    public String geteTip() {
+        return eTip;
+    }
+
+    public void seteTip(String eTip) {
+        this.eTip = eTip;
+    }
+
+    @Override
+    public String toString() {
+        return "Expression{" +
+                "id=" + id +
+                ", eExpre='" + eExpre + '\'' +
+                ", eResult='" + eResult + '\'' +
+                ", eRank=" + eRank +
+                ", eTip='" + eTip + '\'' +
+                '}';
     }
 }

@@ -11,15 +11,16 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- basic styles -->
-<link href="page/assets/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="page/assets/css/font-awesome.min.css" />
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 <link rel="stylesheet"
   href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-<link rel="stylesheet" href="page/assets/css/ace.min.css" />
-<link rel="stylesheet" href="page/assets/css/ace-rtl.min.css" />
-<link rel="stylesheet" href="page/assets/css/ace-skins.min.css" />
-<script src="page/assets/js/ace-extra.min.js"></script>
+<link rel="stylesheet" href="assets/css/ace.min.css" />
+<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+<script src="assets/js/ace-extra.min.js"></script>
+<script src="assets/js/jquery-1.10.2.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
     <div class="navbar-container" id="navbar-container">
       <div class="navbar-header pull-left">
         <a href="#" class="navbar-brand"> <small> <i
-            class="icon-leaf"></i> 系统
+            class="icon-leaf"></i> 小学生四则运算练习和测试系统
         </small>
         </a>
         <!-- /.brand -->
@@ -74,7 +75,7 @@
 
           <li class="light-blue"><a data-toggle="dropdown" href="#"
             class="dropdown-toggle"> <img class="nav-user-photo"
-              src="page/assets/avatars/user.jpg" alt="Jason's Photo" /> <span
+              src="assets/avatars/user.jpg" alt="Jason's Photo" /> <span
               class="user-info"> <small>欢迎光临,</small> ${user.getuNickname()}
             </span> <i class="icon-caret-down"></i>
           </a>
@@ -159,31 +160,15 @@
 
           <li><a href="#" class="dropdown-toggle"> <i
               class="icon-desktop"></i> <span class="menu-text">
-                习题</span> <b class="arrow icon-angle-down"></b>
-          </a>
-            <ul class="submenu">
-              <li><a href="#" class="dropdown-toggle"> <i
-                  class="icon-double-angle-right"></i> 难度级别 <b
-                  class="arrow icon-angle-down"></b>
-              </a>
-
-                <ul class="submenu">
-                  <li><a href="#"> <i class="icon-leaf"></i>
-                      A级
+                题库</span> <b class="arrow icon-angle-down"></b>
+		     </a>
+			  <ul class="submenu">
+                  <li><a href="info.jsp" target="mainframe"> <i class="icon-leaf"></i>
+                      测试
                   </a></li>
-
-                  <li><a href="#" class="dropdown-toggle"> <i
-                      class="icon-pencil"></i> B级 <b
-                      class="arrow icon-angle-down"></b>
-                  </a>
-
-                    <ul class="submenu">
-                      <li><a href="#"> <i class="icon-plus"></i>
-                      </a></li>
-                      <li><a href="#"> <i class="icon-eye-open"></i>
-                      </a></li>
-                    </ul></li>
-                </ul></li>
+                  <li><a href="#"  target="#"> <i
+                      class="icon-leaf"></i> 练习</b>
+                  </a></li>
             </ul></li>
         </ul>
         <!-- /.nav-list -->
@@ -244,12 +229,19 @@
           <div class="row">
             <div class="col-xs-12">
               <!-- PAGE CONTENT BEGINS -->
-
-
-
+				<iframe src="explain.jsp" id="mainframe" name="mainframe"
+                            style="width: 100%; border: 0px; margin: 0px; padding: 0px;"></iframe>
+                <script type="text/javascript">
+                    //alert("OK");
+                    var height  = $(window).height() - 50;
+                    //alert(height);
+                    jQuery("#mainframe").attr("height",
+                            "" + height + "px;");
+                </script>
               <!-- PAGE CONTENT ENDS -->
             </div>
             <!-- /.col -->
+
           </div>
           <!-- /.row -->
         </div>
@@ -331,7 +323,7 @@
   <script type="text/javascript">
 			window.jQuery
 					|| document
-							.write("<script src='page/assets/js/jquery-2.0.3.min.js'>"
+							.write("<script src='assets/js/jquery-2.0.3.min.js'>"
 									+ "<"+"script>");
 		</script>
 
@@ -339,38 +331,38 @@
 
   <!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='page/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+ window.jQuery || document.write("<script src='js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
 
   <script type="text/javascript">
 			if ("ontouchend" in document)
 				document
-						.write("<script src='page/assets/js/jquery.mobile.custom.min.js'>"
+						.write("<script src='assets/js/jquery.mobile.custom.min.js'>"
 								+ "<"+"script>");
 		</script>
-  <script src="page/assets/js/bootstrap.min.js"></script>
-  <script src="page/assets/js/typeahead-bs2.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/typeahead-bs2.min.js"></script>
 
   <!-- page specific plugin scripts -->
 
   <!--[if lte IE 8]>
-		  <script src="page/assets/js/excanvas.min.js"></script>
+		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-  <script src="page/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-  <script src="page/assets/js/jquery.ui.touch-punch.min.js"></script>
-  <script src="page/assets/js/jquery.slimscroll.min.js"></script>
-  <script src="page/assets/js/jquery.easy-pie-chart.min.js"></script>
-  <script src="page/assets/js/jquery.sparkline.min.js"></script>
-  <script src="page/assets/js/flot/jquery.flot.min.js"></script>
-  <script src="page/assets/js/flot/jquery.flot.pie.min.js"></script>
-  <script src="page/assets/js/flot/jquery.flot.resize.min.js"></script>
+  <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+  <script src="assets/js/jquery.slimscroll.min.js"></script>
+  <script src="assets/js/jquery.easy-pie-chart.min.js"></script>
+  <script src="assets/js/jquery.sparkline.min.js"></script>
+  <script src="assets/js/flot/jquery.flot.min.js"></script>
+  <script src="assets/js/flot/jquery.flot.pie.min.js"></script>
+  <script src="assets/js/flot/jquery.flot.resize.min.js"></script>
 
   <!-- ace scripts -->
 
-  <script src="page/assets/js/ace-elements.min.js"></script>
-  <script src="page/assets/js/ace.min.js"></script>
+  <script src="assets/js/ace-elements.min.js"></script>
+  <script src="assets/js/ace.min.js"></script>
 
   <!-- inline scripts related to this page -->
 
