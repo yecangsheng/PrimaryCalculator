@@ -13,6 +13,7 @@ import java.util.Map;
 
 
 
+
 public class Questions {
 
 	public Questions() {
@@ -30,18 +31,18 @@ public class Questions {
 //		System.out.println(re.getSeqExp());
 //		System.out.println(re.getValue());
 		
-		writeToTxt(generateQuestions(100));
+		writeToTxt(generateQuestions(100000));
 		
 	}
 	
 	/*
 	 * 初始化n道题，存到map中
 	 */
-	public static HashMap<String, String> generateQuestions(int num) {
-		HashMap<String, String> questionsMap = new HashMap<String, String>();
+	public static HashMap<String, Integer> generateQuestions(int num) {
+		HashMap<String, Integer> questionsMap = new HashMap<String, Integer>();
 		for(int i=0; i<num; i++) {
-			RPNExpression  newRPNExp = new RPNExpression(Utils.getRandomInteger(2, 5));
-			questionsMap.put(newRPNExp.getSeqExp(), newRPNExp.getValue());
+			RPNExpression  newRPNExp = new RPNExpression(Utils.getRandomInteger(2, 6));
+			questionsMap.put(newRPNExp.getSeqExp() + " = " + newRPNExp.getValue(), newRPNExp.getLevel());
 		}
 		return questionsMap;
 	}
@@ -49,17 +50,50 @@ public class Questions {
 	/*
 	 * 将初始化的n道题从map写入文件
 	 */
-	public static boolean writeToTxt(HashMap<String, String> questionsMap) {
+	public static boolean writeToTxt(HashMap<String, Integer> questionsMap) {
 		try {
-			BufferedWriter bufw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tempfile//questions.txt")));
+			BufferedWriter bufw1 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tempfile//1.txt")));
+			BufferedWriter bufw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tempfile//2.txt")));
+			BufferedWriter bufw3 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tempfile//3.txt")));
+			BufferedWriter bufw4 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tempfile//4.txt")));
+			BufferedWriter bufw5 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tempfile//error.txt")));
 			
-			for(Map.Entry<String, String> entry : questionsMap.entrySet()){
-				bufw.write(entry.getKey() + " = " + entry.getValue());
-				bufw.newLine();
-				bufw.flush();
+			for(Map.Entry<String, Integer> entry : questionsMap.entrySet()){
+				switch (entry.getValue()) {
+				case 1:
+					bufw1.write(entry.getKey());
+					bufw1.newLine();
+					bufw1.flush();
+					break;
+				case 2:
+					bufw2.write(entry.getKey());
+					bufw2.newLine();
+					bufw2.flush();
+					break;
+				case 3:
+					bufw3.write(entry.getKey());
+					bufw3.newLine();
+					bufw3.flush();
+					break;
+				case 4:
+					bufw4.write(entry.getKey());
+					bufw4.newLine();
+					bufw4.flush();
+					break;
+				default:
+					bufw5.write(entry.getKey());
+					bufw5.newLine();
+					bufw5.flush();
+					break;
+				}
+				
 			}
 			
-			bufw.close();
+			bufw1.close();
+			bufw2.close();
+			bufw3.close();
+			bufw4.close();
+			bufw5.close();
 			
 			return true;
 		} catch (IOException e) {
