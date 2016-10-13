@@ -12,4 +12,11 @@ public abstract class RecordService {
      * @return
      */
     public abstract int insertOneRecord(Record record);
+
+    /**
+     * 查询用户是第几次做题
+     * @param u_id 用户编号
+     * @return
+     */
+    public abstract int queryForFrequency(int u_id);
 }
