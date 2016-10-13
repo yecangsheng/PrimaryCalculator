@@ -1,6 +1,5 @@
 package entity;
 
-import java.util.Date;
 
 /**
  * Created by Bruce-Jiang on 2016/10/9.
@@ -31,12 +30,24 @@ public class Record {
      */
     private String date;
 
+    /**
+     * 用户是第几次做题
+     */
+    private int num;
+
+    /**
+     * 做题试卷等级
+     */
+    private int r_rank;
+
     public Record(){}
-    public Record(int uId, int eId, String result, String date){
+    public Record(int uId, int eId, String result, String date,int num, int rank){
         this.eId = eId;
         this.uId = uId;
         this.result = result;
         this.date = date;
+        this.num = num;
+        this.r_rank = rank;
     }
 
     public int getId() {
@@ -79,6 +90,22 @@ public class Record {
         this.date = date;
     }
 
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public int getR_rank() {
+        return r_rank;
+    }
+
+    public void setR_rank(int r_rank) {
+        this.r_rank = r_rank;
+    }
+
     @Override
     public String toString() {
         return "Record{" +
@@ -86,7 +113,9 @@ public class Record {
                 ", uId=" + uId +
                 ", eId=" + eId +
                 ", result='" + result + '\'' +
-                ", date=" + date +
+                ", date='" + date + '\'' +
+                ", num=" + num +
+                ", r_rank=" + r_rank +
                 '}';
     }
 }
