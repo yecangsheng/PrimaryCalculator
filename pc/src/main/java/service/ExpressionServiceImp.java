@@ -31,7 +31,8 @@ public class ExpressionServiceImp extends ExpressionService{
 
         DBSqlExe dbSqlExe = new DBSqlExe();
 
-        List<Map<String,Object>> mapList = dbSqlExe.exeQueryNTransaction(sqlQuery,new Object[]{exp.geteExpre(),exp.geteResult(),exp.geteRank()});
+        List<Map<String,Object>> mapList = dbSqlExe.exeQueryNTransaction(sqlQuery,
+                new Object[]{exp.geteExpre(),exp.geteResult(),exp.geteRank()});
 
         if(mapList.isEmpty()) {
             re = dbSqlExe.exeUpdateTransatcion(sqlInsert, new Object[]{exp.geteExpre(), exp.geteResult(), exp.geteRank(),exp.geteTip()});
@@ -43,13 +44,17 @@ public class ExpressionServiceImp extends ExpressionService{
     public Expression obtainOneExp(int rank){
         Random random = new Random();
         String sql = "SELECT * FROM expression WHERE e_rank = ? ORDER BY id";
+        String sql5 = "SELECT * FROM expression ORDER BY id";
         //String total = "SELECT COUNT(*) FROM expression WHERE e_rank = ?";
         DBSqlExe dbSqlExe = new DBSqlExe();
+        List<Map<String,Object>> mapList = null;
         //注意这里是存在败笔的
-        if(rank == 0){
+        if(rank == 5){
             rank = random.nextInt(4)+1;
+            mapList = dbSqlExe.exeQueryNTransaction(sql5,new Object[]{rank});
+        }else{
+            mapList = dbSqlExe.exeQueryNTransaction(sql,new Object[]{rank});
         }
-        List<Map<String,Object>> mapList = dbSqlExe.exeQueryNTransaction(sql,new Object[]{rank});
         int index = random.nextInt(mapList.size());
         Map<String,Object> map = mapList.get(index);
         Expression exp = new Expression();
