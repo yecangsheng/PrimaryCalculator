@@ -61,10 +61,21 @@
     <script src="assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body onload="startTimer()">
+<body>
 <div class="container center">
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12">
+            <div class="col-sm-offset-2"></div>
+            <div class="col-xs-8">
+
+                <script type="text/javascript">
+                    $(document).ready(function (){
+                        $("#marquee1").marquee();
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-offset-2">
             <div class="widget-box">
                 <div class="widget-header">
                     <h4>答题版</h4>
@@ -120,18 +131,18 @@
                                 <div class="form-group">
                                     <label for="tip" class="col-sm-2 control-label">提示:</label>
                                     <div class="col-sm-10">
-                                        <textarea id="tip" name="tip" class="form-control"></textarea>
+                                        <textarea id="tip" name="tip" class="form-control" readonly></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group" id="show" hidden="true">
                                     <label for="status" class="col-sm-2 control-label">答题状态:</label>
                                     <div class="col-sm-3">
-                                        <input id="status" name="status" type="text" value="">
+                                        <input id="status" name="status" type="text" value="" readonly>
                                     </div>
                                     <div class="col-sm-2"></div>
                                     <label for="pResult" class="col-sm-2 control-label">预期结果:</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control" id="pResult" name="pResult" value="${exp.geteResult()}" />
+                                        <input type="text" class="form-control" id="pResult" name="pResult" value="${exp.geteResult()}" readonly/>
                                     </div>
                                 </div>
 
@@ -189,6 +200,7 @@
                                     </div>
                                 </div>
                             </div><!-- /.row -->
+
                         </form><!-- /.form-->
                     </div><!-- /.widget-main -->
                 </div><!-- /.widget-body -->

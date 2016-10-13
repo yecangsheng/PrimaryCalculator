@@ -68,22 +68,45 @@
         <div class="page-header" align="center">
             <h1>答题说明</h1>
         </div>
-        <div class="row" align="center">
-            <div class="col-xs-10" align="center">
-                <ol style="text-align: center;align:center;">
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-10" align="center">
+                    <ol style="text-align: center;align:center;">
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <form id="Qform" method="post" action="../eqs" style="text-align: center; align:center;">
+                        <div class="form-group">
+                            <label for="rank" class="control-label col-xs-2"></label>
+                            <select id="rank" name="rank" class="selectpicker show-tick form-control" >
+                                <option value="">...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">综合</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="return Qsub();">同意,确认开始</button>
+                    </form>
+                </div> <!--/.col-sx-10-->
+            </div><!-- /.col-sx-12-->
+        </div><!-- /.row-->
     </fieldset>
-    <form id="Qform" method="post" action="../eqs" style="text-align: center; align:center;">
-        <button class="btn btn-primary" onclick="Qsub()">同意,确认开始</button>
-    </form>
+
     <script type="text/javascript">
         function Qsub(){
             //alert("OK");
-            document.getElementById("Qform").submit();
+            var rank  = document.getElementById("rank");
+           // alert(rank.value);
+            if(rank.value == null || rank.value == ""){
+                alert("请选择难度等级！");
+                document.getElementById("rank").focus();
+                return false;
+            }else {
+                document.getElementById("Qform").submit();
+            }
+            return true;
         }
     </script>
 </div>

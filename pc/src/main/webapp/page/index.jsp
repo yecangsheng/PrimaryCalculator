@@ -158,18 +158,10 @@
                 首页</span>
           </a></li>
 
-          <li><a href="#" class="dropdown-toggle"> <i
+          <li><a href="info.jsp" target="mainframe"> <i
               class="icon-desktop"></i> <span class="menu-text">
-                题库</span> <b class="arrow icon-angle-down"></b>
+                测试</span> <b class="arrow icon-angle-down"></b>
 		     </a>
-			  <ul class="submenu">
-                  <li><a href="info.jsp" target="mainframe"> <i class="icon-leaf"></i>
-                      测试
-                  </a></li>
-                  <li><a href="#"  target="#"> <i
-                      class="icon-leaf"></i> 练习</b>
-                  </a></li>
-            </ul></li>
         </ul>
         <!-- /.nav-list -->
 
