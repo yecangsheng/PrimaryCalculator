@@ -17,16 +17,20 @@ import java.io.IOException;
  */
 public class ExpressionQueryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         //获取参数
         String rankStr = request.getParameter("rank");
-        int rank = 0;
-        if(rankStr != null){
+        int rank;
+        if(rankStr != null){ // 如果是第一次选择
             rank = Integer.parseInt(rankStr);
+            //向session存储相应值
+            session.setAttribute("rank",rank);
+        }else{//存储在Session中的难度等级
+            rank = (Integer) session.getAttribute("rank");
         }
         System.out.println("OK");
         ExpressionService es = new ExpressionServiceImp();
         Expression exp = es.obtainOneExp(rank);
-        HttpSession session = request.getSession();
         session.setAttribute("exp",exp);
         response.sendRedirect("page/showExpression.jsp");
     }
