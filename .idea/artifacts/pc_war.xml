@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pc:war">
+    <output-path>$PROJECT_DIR$/pc/target</output-path>
+    <root id="archive" name="pc.war">
+      <element id="artifact" artifact-name="pc:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.apache.maven.surefire:surefire-junit47:2.19.1" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.39" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

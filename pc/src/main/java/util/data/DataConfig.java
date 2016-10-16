@@ -45,7 +45,7 @@ public class DataConfig {
                         for(int j=0; j<strs.length-1; j++){
                             System.out.println(strs[j]);
                             String[] expString = strs[j].split("=");
-                            expressionList.add(new Expression(expString[0],expString[1],i));
+                            expressionList.add(new Expression(expString[0],expString[1],i,null));
                         }
                     }else{
                         String[] strs = sb.toString().split("\n");
@@ -54,7 +54,7 @@ public class DataConfig {
                         for(int j=0; j<strs.length; j++){
                             System.out.println(strs[j]);
                             String[] expString = strs[j].split("=");
-                            expressionList.add(new Expression(expString[0],expString[1],i));
+                            expressionList.add(new Expression(expString[0],expString[1],i,null));
                         }
                     }
                     ExpressionService es = new ExpressionServiceImp();

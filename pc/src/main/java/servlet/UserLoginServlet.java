@@ -16,14 +16,17 @@ public class UserLoginServlet extends javax.servlet.http.HttpServlet {
         String uPassword = request.getParameter("uPassword");
         int uIdentity = Integer.parseInt(request.getParameter("uIdentity"));
         UserService us = new UserServiceImp();
+        System.out.println(uIdentity + " "+uPassword +" " +uMail);
         User user= us.login(new User(uMail,uPassword,uIdentity));
+
         if(null == user){
             request.setAttribute("message","用户不存在或者是密码错误");
             request.getRequestDispatcher("page/login.jsp").forward(request,response);
         }else{
+            System.out.println(user.toString());
             HttpSession session = request.getSession();
             session.setAttribute("user",user);
-            request.getRequestDispatcher("page/index.jsp").forward(request,response);
+            response.sendRedirect("page/index.jsp");
         }
     }
 

@@ -31,16 +31,53 @@ INSERT  INTO user(id,u_mail,u_nickname,u_password,u_identity) VALUES
 #删除语句
 #DELETE FROM  user WHERE id = 4;
 
+DROP TABLE IF EXISTS expression;
 #创建expression表
 CREATE TABLE expression(
   id INT PRIMARY KEY  AUTO_INCREMENT,
   e_expre VARCHAR(50) NOT NULL ,
   e_result VARCHAR(10) NOT NULL ,
-  e_rank INT NOT NULL
+  e_rank INT NOT NULL,
+  e_tip VARCHAR(100)
 )ENGINE = InnoDB , CHAR SET =utf8;
 
+ALTER TABLE expression add e_tip VARCHAR(100);
 #查看表结构
 DESC  expression;
 
 #查询全部数据记录
 SELECT * FROM  expression;
+
+#根据条件查询记录,并按照id从小到大排序
+SELECT * FROM expression WHERE e_rank = 1 ORDER BY  id ASC;
+
+SELECT * FROM  expression WHERE e_rank <> 5 ORDER BY id ASC ;
+
+SELECT  count(*) as sum FROM  expression WHERE  e_rank = 1;
+
+DROP  TABLE  IF EXISTS  record;
+#做题记录表
+CREATE TABLE record (
+  id INT NOT NULL  PRIMARY KEY  AUTO_INCREMENT,
+  e_id INT NOT NULL ,
+  u_id INT NOT NULL ,
+  result VARCHAR(10) NOT NULL  DEFAULT '',
+  r_time VARCHAR(25) NOT NULL DEFAULT '',
+  r_num INT NOT NULL DEFAULT '0',
+  r_rank INT NOT NULL
+)ENGINE = InnoDB , CHAR SET =utf8;
+
+#查看表结构
+DESC record;
+
+#查看表中内容
+SELECT * FROM record ;
+
+SELECT max(r_num) FROM record WHERE u_id = 1;
+
+#删除记录
+DELETE FROM  record WHERE id = 1;
+
+
+SHOW TABLES ;
+
