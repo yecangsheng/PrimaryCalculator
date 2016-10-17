@@ -1,6 +1,5 @@
 package util.sql;
 
-import org.junit.Test;
 import util.Record;
 
 import java.sql.*;
@@ -334,7 +333,7 @@ public class DBSqlExe {
             }
         }
     }
-    @Test
+
     public void testConnection(){
         Connection conn = new DBSqlExe().getConnection();
         if(conn!=null){
