@@ -41,13 +41,17 @@
     <servlet-name>RecordWriteServlet</servlet-name>
     <servlet-class>servlet.RecordWriteServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ResocrdQueryServlet</servlet-name>
+    <servlet-class>servlet.ResocrdQueryServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/UserLoginServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserRegisterServlet</servlet-name>
-    <url-pattern>/UserRegisterServlet</url-pattern>
+    <url-pattern>/urs</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ExpressionQueryServlet</servlet-name>
@@ -56,5 +60,9 @@
   <servlet-mapping>
     <servlet-name>RecordWriteServlet</servlet-name>
     <url-pattern>/rws</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResocrdQueryServlet</servlet-name>
+    <url-pattern>/rqs</url-pattern>
   </servlet-mapping>
 </web-app>
