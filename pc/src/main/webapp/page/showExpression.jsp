@@ -219,11 +219,14 @@
                             /*输出前先调用exchange函数进行秒到分秒的转换，因为exchange并非在主函数window.onload使用，因此不需要进行声明*/
                             document.getElementById("timer").value=exchange(this.s);
                             document.getElementById("time").value =  this.s;
+                            var curExpNum = $("expNum").value;
                             /*如果时间耗尽，那么，弹窗，使按钮不可用，停止不停调用clock函数中的move()*/
-                            if(this.s<0){
-                                //alert("时间到");
-                                clearTimeout(timer);
-
+                            if(this.s<=0){
+                                //alert("Ok");
+                                //弹出模态框
+                                $('#resultModal').modal({keyboard: false});
+                            }else if(parseInt(curExpNum)>=20){
+                                $('#resultModal').modal({keyboard: false});
                             }
                             /*每被调用一次，剩余秒数就自减*/
                             this.s=this.s-1;
@@ -244,6 +247,32 @@
         </form><!-- /.form-->
         <form method="post" action="../rqs" id="rForm">
         </form>
+        <!-- Modal -->
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">答题结束</h4>
+                    </div>
+                    <div class="modal-body">
+                        查看本次答题记录？？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="showResult()">查看</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="backToIndex()">下次吧！</button>
+                    </div>
+                    <script type="text/javascript">
+                        function showResult(){ //查询记录
+                            $("#rForm").submit();
+                        }
+                        function backToIndex(){
+                            location.href = "index.jsp";
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- basic scripts -->
 

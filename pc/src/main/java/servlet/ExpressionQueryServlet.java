@@ -32,6 +32,9 @@ public class ExpressionQueryServlet extends HttpServlet {
         ExpressionService es = new ExpressionServiceImp();
         Expression exp = es.obtainOneExp(rank);
         session.setAttribute("exp",exp);
+        Integer time = 20*60;
+        session.setAttribute("leftTime",time);
+        session.setAttribute("expNum",1);
         response.sendRedirect("page/showExpression.jsp");
     }
 
