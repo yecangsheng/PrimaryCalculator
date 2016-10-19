@@ -70,17 +70,31 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <c:set var="i" value="0" />
+                    <c:forEach items="${resultList}" var="record">
                     <tr>
                         <td class="center"><label><input
                                 type="checkbox" class="ace" /><span class="lbl"></span></label>
                         </td>
-                        <td>1</td>
-                        <td><a href="#">app.com</a></td>
-                        <td>$45</td>
-                        <td class="hidden-480">3,330</td>
-                        <td class="hidden-480"><span
-                                class="label label-sm label-warning">Expiring</span></td>
+                        <td><c:set var="i" value="${i+1}" />${i}</td>
+                        <td>${record.exp}</td>
+                        <td>${record.pResult}</td>
+                        <td class="hidden-480">${record.result}</td>
+                        <td class="hidden-480">
+                            <span class="label label-sm label-warning">
+                                <c:choose>
+                                    //当心这里，字符串进行比较的时候，可能前有空格，要十分注意。
+                                    <c:when test="${record.result.trim() == record.pResult.trim()}">
+                                        正确
+                                    </c:when>
+                                    <c:otherwise>
+                                        错误
+                                    </c:otherwise>
+                                </c:choose>
+                             </span>
+                        </td>
                     </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
