@@ -1,6 +1,10 @@
 package service;
 
+import entity.ExpRec;
 import entity.Record;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Bruce-Jiang on 2016/10/9.
@@ -19,4 +23,12 @@ public abstract class RecordService {
      * @return
      */
     public abstract int queryForFrequency(int u_id);
+
+    /**
+     * 查询用户第几次做题的做题结果
+     * @param num 第几次
+     * @param u_id  用户编号
+     * @return
+     */
+    public abstract List<ExpRec> queryForManyRecords(int num, int u_id);
 }

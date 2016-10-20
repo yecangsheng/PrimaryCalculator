@@ -70,22 +70,39 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
+                <div class="col-xs-2"></div>
                 <div class="col-xs-10" align="center">
-                    <ol style="text-align: center;align:center;">
-                        <li></li>
-                        <li></li>
+                    <ol>
+                        <li style="text-align: left">
+                            <ul>难度选择说明：
+                            <li><label class="alert-success">等级1</label>只包含一个操作符的简单加减运算</li>
+                            <li><label class="alert-success">等级2</label>包含不超过3个操作符（加减乘除），且不含括号</li>
+                            <li><label class="alert-success">等级3</label>包含不超过3个操作符（加减乘除），运算式中含有括号</li>
+                            <li><label class="alert-success">等级4</label>包括不超过4个操作符（加减乘除），运算式中含有括号，运算中会出现真分出</li>
+                            <li><label class="alert-success">等级5</label>包含上述所有的题目类型的综合测试</li>
+                            请学生根据自己的学习范围选择合适的难度等级。
+                            </ul>
+                        </li>
+                        <li style="text-align: left">
+                            <ul>
+                                <li>每次测试一共20题，每题5分，共100分</li>
+                                <li>每次测试时间为：20分钟</li>
+                            </ul>
+                        </li>
                     </ol>
                     <form id="Qform" method="post" action="../eqs" style="text-align: center; align:center;">
                         <div class="form-group">
-                            <label for="rank" class="control-label col-xs-2"></label>
-                            <select id="rank" name="rank" class="selectpicker show-tick form-control" >
-                                <option value="">...</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">综合</option>
-                            </select>
+                            <label for="rank" class="control-label col-xs-2">难度等级:</label>
+                            <div class="col-xs-4">
+                                <select id="rank" name="rank" class="selectpicker show-tick form-control" >
+                                    <option value="">...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">综合</option>
+                                </select>
+                            </div>
                         </div>
                         <button class="btn btn-primary" onclick="return Qsub();">同意,确认开始</button>
                     </form>

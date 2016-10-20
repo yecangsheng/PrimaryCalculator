@@ -1,9 +1,11 @@
 package service;
 
+import entity.ExpRec;
 import entity.Record;
 import util.sql.DBSqlExe;
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,5 +37,28 @@ public class RecordServiceImp extends RecordService{
             num = Integer.parseInt((str==null || str.equals(""))? "0" : str.toString());
         }
         return num;
+    }
+
+    @Override
+    public List<ExpRec> queryForManyRecords(int num, int u_id) {
+        List<ExpRec> list = new ArrayList<ExpRec>();
+        String sql = "SELECT r.e_id as e_id, r.result as result, e.e_result as pResult," +
+                "e.e_expre as exp" +
+                " FROM expression as e, record as r WHERE r.e_id =  e.id" +
+                " AND r.u_id = ? AND r_num = ?";
+        DBSqlExe dbSqlExe = new DBSqlExe();
+        List<Map<String,Object>> mapList = dbSqlExe.exeQueryNTransaction(sql,new Object[]{u_id,num});
+        for(Map map : mapList){
+            if(!map.isEmpty()){
+                ExpRec expRec = new ExpRec();
+                expRec.seteId((Integer)map.get("e_id"));
+                expRec.setExp((String)map.get("exp"));
+                expRec.setResult((String)map.get("result"));
+                expRec.setpResult((String)map.get("pResult"));
+                expRec.setuId(u_id);
+                list.add(expRec);
+            }
+        }
+        return list;
     }
 }

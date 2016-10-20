@@ -87,11 +87,11 @@ public class Expression {
     @Override
     public String toString() {
         return "Expression{" +
-                "id=" + id +
-                ", eExpre='" + eExpre + '\'' +
-                ", eResult='" + eResult + '\'' +
-                ", eRank=" + eRank +
-                ", eTip='" + eTip + '\'' +
-                '}';
+                "id=" + getId() +
+                ", eExpre=" + geteExpre()  +
+                ", eResult=" + geteResult()  +
+                ", eRank=" + geteRank() +
+                ", eTip=" + geteTip() +
+                "}";
     }
 }

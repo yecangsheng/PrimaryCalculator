@@ -63,7 +63,11 @@ public class ExpressionServiceImp extends ExpressionService{
         exp.seteResult((String)map.get("e_result"));
         exp.seteRank((Integer)map.get("e_rank"));
         exp.seteTip((String)map.get("e_tip"));
-        System.out.println(exp.toString());
+        System.out.println(exp.geteExpre());
+        System.out.println(exp.geteResult());
+        System.out.println(exp.getId());
+      //  System.out.println(exp.toString());
+
         return exp;
     }
 

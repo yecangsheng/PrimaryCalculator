@@ -49,6 +49,7 @@ public class RecordWriteServlet extends HttpServlet {
         String result = request.getParameter("result");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String date = sdf.format(new Date());
+
         System.out.println(date);
         Record record = new Record(u_id,e_id,result,date,num,rank);
 
@@ -61,10 +62,22 @@ public class RecordWriteServlet extends HttpServlet {
             session.setAttribute("exp",null);
         }
         //获取下一题
+        System.out.println(rank);
 
         expression = es.obtainOneExp(rank);
+
+       // System.out.println("没有之?:"+expression.toString()+" OK ");
+
+        System.out.println("\n wode :"+expression.geteExpre() + ":"+expression.geteResult());
         session.setAttribute("exp",expression);
+        String time = request.getParameter("time");
+        System.out.println(time);
+        session.setAttribute("leftTime",time);
+        //request.setAttribute("exp",expression);
         System.out.println("OK, that's all");
+        Integer expNum = Integer.parseInt(request.getParameter("expNum"));
+        //request.getRequestDispatcher("page/showExpression.jsp").forward(request,response);
+        session.setAttribute("expNum",expNum+1);
         response.sendRedirect("page/showExpression.jsp");
     }
 
