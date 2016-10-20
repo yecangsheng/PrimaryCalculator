@@ -19,12 +19,12 @@ import java.util.List;
 public class ResocrdQueryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String strNum = (String)session.getAttribute("num");
+        Integer num = (Integer)session.getAttribute("num");
         RecordService rs = new RecordServiceImp();
         int u_id = ((User)session.getAttribute("user")).getId();
-        int num = 0;
+        System.out.println(num);
         //如果没有传值则取用户最近一次的作为分析
-        if(strNum == null || strNum.equals("")){
+        if(num == null || num == 0){
             num = rs.queryForFrequency(u_id);
             System.out.println(num);
         }

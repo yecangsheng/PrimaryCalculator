@@ -4,6 +4,8 @@ import entity.Expression;
 import entity.User;
 import service.ExpressionService;
 import service.ExpressionServiceImp;
+import service.RecordService;
+import service.RecordServiceImp;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +30,15 @@ public class ExpressionQueryServlet extends HttpServlet {
         }else{//存储在Session中的难度等级
             rank = (Integer) session.getAttribute("rank");
         }
+
+        RecordService rs = new RecordServiceImp();
+        User user = (User)session.getAttribute("user");
+        //第几次答题
+        Integer num = (Integer)session.getAttribute("num");
+        if(num==null || num ==0){
+            num = rs.queryForFrequency(user.getId());
+        }
+        session.setAttribute("num",num+1);
         System.out.println("OK");
         ExpressionService es = new ExpressionServiceImp();
         Expression exp = es.obtainOneExp(rank);

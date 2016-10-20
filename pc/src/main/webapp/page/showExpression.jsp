@@ -219,13 +219,15 @@
                             /*输出前先调用exchange函数进行秒到分秒的转换，因为exchange并非在主函数window.onload使用，因此不需要进行声明*/
                             document.getElementById("timer").value=exchange(this.s);
                             document.getElementById("time").value =  this.s;
-                            var curExpNum = $("expNum").value;
+                            var curExpNum = document.getElementById("expNum");
+                            //alert(curExpNum.value);
                             /*如果时间耗尽，那么，弹窗，使按钮不可用，停止不停调用clock函数中的move()*/
                             if(this.s<=0){
                                 //alert("Ok");
                                 //弹出模态框
                                 $('#resultModal').modal({keyboard: false});
-                            }else if(parseInt(curExpNum)>=20){
+                            }
+                            if(parseInt(curExpNum.value)>20){
                                 $('#resultModal').modal({keyboard: false});
                             }
                             /*每被调用一次，剩余秒数就自减*/

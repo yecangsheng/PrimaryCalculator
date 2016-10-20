@@ -82,9 +82,9 @@
                         <td class="hidden-480">${record.result}</td>
                         <td class="hidden-480">
                             <span class="label label-sm label-warning">
+                                 <!--当心这里，字符串进行比较的时候，可能前有空格，要十分注意。-->
                                 <c:choose>
-                                    //当心这里，字符串进行比较的时候，可能前有空格，要十分注意。
-                                    <c:when test="${record.result.trim() == record.pResult.trim()}">
+                                    <c:when test="${record.result eq record.pResult}">
                                         正确
                                     </c:when>
                                     <c:otherwise>
