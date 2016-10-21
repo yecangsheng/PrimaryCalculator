@@ -31,4 +31,19 @@ public abstract class RecordService {
      * @return
      */
     public abstract List<ExpRec> queryForManyRecords(int num, int u_id);
+
+    /**
+     * 查询用户的所有做题记录
+     * @param u_id 用户编号
+     * @return
+     */
+    public abstract List<ExpRec> queryForManyRecords(int u_id);
+
+    /**
+     * 获取用户某次答题记录
+     * @param num 用户答题次数
+     * @param u_id 用户编号
+     * @return  0 位置元素 ：用户答对题目数量， 1位置元素用户答错题目数量
+     */
+    public abstract long[] queryForResult(int num,int u_id);
 }
