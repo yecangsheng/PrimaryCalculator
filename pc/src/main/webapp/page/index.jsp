@@ -153,14 +153,20 @@
         <!-- #sidebar-shortcuts -->
 
         <ul class="nav nav-list">
-          <li><a href="info.jsp" target="mainframe"> <i
+			<li><a href="explain.jsp" target="mainframe">
+				<i class="icon-desktop"></i> <span class="menu-text">
+                主页</span></a>
+			</li>
+          	<li><a href="info.jsp" target="mainframe"> <i
               class="icon-desktop"></i> <span class="menu-text">
                 测试</span>
 		     </a>
+		  	</li>
 			<li><a href="../qfrhs" target="mainframe"> <i
 					class="icon-desktop"></i> <span class="menu-text">
                 个人记录</span>
 			</a>
+		</li>
         </ul>
         <!-- /.nav-list -->
 
