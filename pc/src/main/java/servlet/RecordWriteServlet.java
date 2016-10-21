@@ -37,6 +37,8 @@ public class RecordWriteServlet extends HttpServlet {
             //如果取值仍旧是0,将num置为1
             if(num == 0){
                 num = 1;
+            }else{
+                num = num+1;
             }
             //将其放入session域中
             session.setAttribute("num",num);

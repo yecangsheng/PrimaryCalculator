@@ -157,7 +157,7 @@
               class="icon-desktop"></i> <span class="menu-text">
                 测试</span>
 		     </a>
-			<li><a href="../rqs" target="mainframe"> <i
+			<li><a href="../qfrhs" target="mainframe"> <i
 					class="icon-desktop"></i> <span class="menu-text">
                 个人记录</span>
 			</a>

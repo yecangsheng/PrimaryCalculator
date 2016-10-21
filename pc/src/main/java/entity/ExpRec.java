@@ -30,14 +30,19 @@ public class ExpRec {
      */
     private String pResult;
 
+    /**
+     * 做题次数
+     */
+    private int num;
 
     public ExpRec(){}
-    public ExpRec(int uId, int eId,String exp,String result,String pResult){
+    public ExpRec(int uId, int eId,String exp,String result,String pResult, int num){
         this.eId = eId;
         this.uId = uId;
         this.exp = exp;
         this.pResult = pResult;
         this.result = result;
+        this.num = num;
     }
 
     public int getuId() {
@@ -78,5 +83,13 @@ public class ExpRec {
 
     public void setpResult(String pResult) {
         this.pResult = pResult;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 }

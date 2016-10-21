@@ -39,7 +39,8 @@ public class ExpressionQueryServlet extends HttpServlet {
             num = rs.queryForFrequency(user.getId());
         }
         session.setAttribute("num",num+1);
-        System.out.println("OK");
+        num = (Integer)session.getAttribute("num");
+        System.out.println("OK num = "+num);
         ExpressionService es = new ExpressionServiceImp();
         Expression exp = es.obtainOneExp(rank);
         session.setAttribute("exp",exp);
