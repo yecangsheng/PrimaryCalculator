@@ -45,7 +45,15 @@
     <servlet-name>ResocrdQueryServlet</servlet-name>
     <servlet-class>servlet.ResocrdQueryServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
+  <servlet>
+    <servlet-name>QueryForRecordHistoryServlet</servlet-name>
+    <servlet-class>servlet.QueryForRecordHistoryServlet</servlet-class>
+  </servlet>
+    <servlet>
+        <servlet-name>GetTestResultServlet</servlet-name>
+        <servlet-class>servlet.GetTestResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/UserLoginServlet</url-pattern>
   </servlet-mapping>
@@ -65,4 +73,12 @@
     <servlet-name>ResocrdQueryServlet</servlet-name>
     <url-pattern>/rqs</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryForRecordHistoryServlet</servlet-name>
+    <url-pattern>/qfrhs</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetTestResultServlet</servlet-name>
+        <url-pattern>/gtrs</url-pattern>
+    </servlet-mapping>
 </web-app>

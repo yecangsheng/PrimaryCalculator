@@ -225,9 +225,23 @@
                             if(this.s<=0){
                                 //alert("Ok");
                                 //弹出模态框
+                                /*
+                                 * 这种方法不可行，如果在后台重定向，页面会不停的刷新
+                                 * 如果不进行重定向，那么就没没有结果
+                                 */
+                                //$('#getResult').submit();
+                                $.get("../gtrs",function(result){
+                                    document.getElementById("error").innerHTML = result[1];
+                                    //alert("OK")
+                                    document.getElementById("correct").innerHTML = result[0];
+                                    document.getElementById("grade").innerHTML = result[2];
+
+                                });
+                                clearTimeout(timer);
                                 $('#resultModal').modal({keyboard: false});
                             }
                             if(parseInt(curExpNum.value)>20){
+                                //$('#getResult').submit();
                                 $('#resultModal').modal({keyboard: false});
                             }
                             /*每被调用一次，剩余秒数就自减*/
@@ -258,18 +272,42 @@
                         <h4 class="modal-title" id="myModalLabel">答题结束</h4>
                     </div>
                     <div class="modal-body">
-                        查看本次答题记录？？
+                       <div class="row">
+                           <div class="col-xs-6">
+                               <div class="col-xs-12">
+                                   <label for="correct" class="col-xs-4">答对</label>
+                                   <div class="col-xs-4" id="correct">
+                                   </div>
+                                   <label for="correct" class="col-xs-4">题</label>
+                               </div>
+                               <div class="col-xs-12">
+                                   <label for="error" class="col-xs-4">答错</label>
+                                   <div class="col-xs-4" id="error">
+                                   </div>
+                                   <label for="error" class="col-xs-4">题</label>
+                               </div>
+                           </div>
+                           <div class="col-xs-6">
+                               <div class="col-xs-12">
+                                   <label for="grade" class="col-xs-4">得到</label>
+                                   <div class="col-xs-4" >
+                                       <h1 id="grade"></h1>
+                                   </div>
+                                   <label for="grade" class="col-xs-4">分</label>
+                               </div>
+                           </div>
+                       </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="showResult()">查看</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="backToIndex()">下次吧！</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="showResult()">查看本次答题记录?</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="backToIndex()">下次吧!</button>
                     </div>
                     <script type="text/javascript">
                         function showResult(){ //查询记录
                             $("#rForm").submit();
                         }
                         function backToIndex(){
-                            location.href = "index.jsp";
+                            location.href = "explain.jsp";
                         }
                     </script>
                 </div>

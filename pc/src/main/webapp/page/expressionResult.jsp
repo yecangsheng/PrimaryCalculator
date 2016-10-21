@@ -81,17 +81,15 @@
                         <td>${record.pResult}</td>
                         <td class="hidden-480">${record.result}</td>
                         <td class="hidden-480">
-                            <span class="label label-sm label-warning">
                                  <!--当心这里，字符串进行比较的时候，可能前有空格，要十分注意。-->
-                                <c:choose>
-                                    <c:when test="${record.result eq record.pResult}">
-                                        正确
-                                    </c:when>
-                                    <c:otherwise>
-                                        错误
-                                    </c:otherwise>
-                                </c:choose>
-                             </span>
+                                 <c:choose>
+                                     <c:when test="${record.result eq record.pResult}">
+                                         <span class="label label-sm label-success">正确</span>
+                                     </c:when>
+                                     <c:otherwise>
+                                         <span class="label label-sm label-warning">错误</span>
+                                     </c:otherwise>
+                                 </c:choose>
                         </td>
                     </tr>
                     </c:forEach>
