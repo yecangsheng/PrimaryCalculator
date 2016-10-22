@@ -4,6 +4,27 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--设置过滤器拦截所有请求-->
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>filter.LoginFilter</filter-class>
+    <init-param>
+      <param-name>loginStrings</param-name>
+      <param-value>/login.jsp;UserLoginServlet</param-value><!-- 登陆请求不过滤-->
+    </init-param>
+    <init-param>
+      <param-name>includeStrings</param-name>
+      <param-value>.jsp;</param-value> <!--包含该后缀的请求，都过滤-->
+    </init-param>
+    <init-param>
+      <param-name>redirectPath</param-name> <!--未通过跳转到登陆到界面-->
+      <param-value>page/login.jsp</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
     <servlet-name>UserLoginServlet</servlet-name>
     <servlet-class>servlet.UserLoginServlet</servlet-class>
@@ -12,6 +33,25 @@
   <servlet-name>UserRegisterServlet</servlet-name>
   <servlet-class>servlet.UserRegisterServlet</servlet-class>
 </servlet>
+  <servlet>
+    <servlet-name>ExpressionQueryServlet</servlet-name>
+    <servlet-class>servlet.ExpressionQueryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RecordWriteServlet</servlet-name>
+    <servlet-class>servlet.RecordWriteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ResocrdQueryServlet</servlet-name>
+    <servlet-class>servlet.ResocrdQueryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryForRecordHistoryServlet</servlet-name>
+    <servlet-class>servlet.QueryForRecordHistoryServlet</servlet-class>
+  </servlet>
+    <servlet>
+        <servlet-name>GetTestResultServlet</servlet-name>
+        <servlet-class>servlet.GetTestResultServlet</servlet-class>
     <servlet>
         <servlet-name>GetScore1</servlet-name>
         <servlet-class>servlet.GetScore1</servlet-class>
@@ -30,8 +70,28 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserRegisterServlet</servlet-name>
-    <url-pattern>/UserRegisterServlet</url-pattern>
+    <url-pattern>/urs</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExpressionQueryServlet</servlet-name>
+    <url-pattern>/eqs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RecordWriteServlet</servlet-name>
+    <url-pattern>/rws</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResocrdQueryServlet</servlet-name>
+    <url-pattern>/rqs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryForRecordHistoryServlet</servlet-name>
+    <url-pattern>/qfrhs</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetTestResultServlet</servlet-name>
+        <url-pattern>/gtrs</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GetScore1</servlet-name>
         <url-pattern>/GetScore1</url-pattern>
