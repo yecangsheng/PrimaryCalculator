@@ -52,6 +52,7 @@
     <servlet>
         <servlet-name>GetTestResultServlet</servlet-name>
         <servlet-class>servlet.GetTestResultServlet</servlet-class>
+  </servlet>
     <servlet>
         <servlet-name>GetScore1</servlet-name>
         <servlet-class>servlet.GetScore1</servlet-class>
