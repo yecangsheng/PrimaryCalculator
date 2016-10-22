@@ -13,8 +13,16 @@
   <servlet-class>servlet.UserRegisterServlet</servlet-class>
 </servlet>
     <servlet>
-        <servlet-name>GetScoreServlet</servlet-name>
-        <servlet-class>servlet.GetScoreServlet</servlet-class>
+        <servlet-name>GetScore1</servlet-name>
+        <servlet-class>servlet.GetScore1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetScore2</servlet-name>
+        <servlet-class>servlet.GetScore2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetScore3</servlet-name>
+        <servlet-class>servlet.GetScore3</servlet-class>
     </servlet>
     <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
@@ -24,5 +32,18 @@
     <servlet-name>UserRegisterServlet</servlet-name>
     <url-pattern>/UserRegisterServlet</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetScore1</servlet-name>
+        <url-pattern>/GetScore1</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>GetScore2</servlet-name>
+        <url-pattern>/GetScore2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetScore3</servlet-name>
+        <url-pattern>/GetScore3</url-pattern>
+    </servlet-mapping>
 
 </web-app>

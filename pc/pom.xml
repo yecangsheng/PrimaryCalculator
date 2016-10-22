@@ -83,12 +83,11 @@
       </exclusions>
     </dependency>
 
-    <dependency>
+     <dependency>
       <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-mapper-asl</artifactId>
       <version>1.8.3</version>
     </dependency>
-
   </dependencies>
   <build>
     <finalName>pc</finalName>
