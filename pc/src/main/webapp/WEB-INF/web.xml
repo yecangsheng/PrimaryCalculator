@@ -53,6 +53,10 @@
         <servlet-name>GetTestResultServlet</servlet-name>
         <servlet-class>servlet.GetTestResultServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>StatisticsServlet</servlet-name>
+        <servlet-class>servlet.StatisticsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/UserLoginServlet</url-pattern>
@@ -81,4 +85,9 @@
         <servlet-name>GetTestResultServlet</servlet-name>
         <url-pattern>/gtrs</url-pattern>
     </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <url-pattern>/Statistics</url-pattern>
+  </servlet-mapping>
 </web-app>
