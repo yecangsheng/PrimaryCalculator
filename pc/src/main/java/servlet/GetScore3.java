@@ -1,6 +1,7 @@
 package servlet;
 
 import entity.Score;
+import entity.User;
 import org.codehaus.jackson.map.ObjectMapper;
 import util.shen.SqlOperation;
 
@@ -8,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,25 +35,26 @@ public class GetScore3 extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int flag = 0;
+        HttpSession session = request.getSession();
+        //首先获得用户的id
+        User user = (User) session.getAttribute("user");
+        int u_id = user.getId();
         String rank2  = (String)request.getParameter("rank3");
         String period2 = (String)request.getParameter("period3");
         String begintime2 = (String)request.getParameter("begintime3");
         String endtime2 = (String)request.getParameter("endtime3");
-        //System.out.println(rank2 + " "+ period2 + " "+ begintime2 + " "+ endtime2);
         try {
             //下面将日期转换成毫秒
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Long begintime = sdf.parse(begintime2).getTime();
             Long endtime = sdf.parse(endtime2).getTime();
             Long period =  new Long(period2) * 24 * 3600*1000;
-            int u_id = 1;
             SqlOperation sqlOperation = new SqlOperation();
             conn  = sqlOperation.initSqlOperation();
             long time = begintime + period;
             list = new ArrayList<Score>();
 
             while(time < endtime){
-          //      System.out.println(flag +"  "+ time + " "+ endtime);
                 flag++;
                 String sql = "SELECT SUM(score) score FROM record WHERE  r_time >= ? AND r_time <= ? AND r_rank = ? AND u_id = ? GROUP BY r_num";
                 preparedStatement = conn.prepareStatement(sql);
