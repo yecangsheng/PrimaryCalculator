@@ -70,6 +70,10 @@
     <servlet-class>servlet.UserLogoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
+        <servlet-name>StatisticsServlet</servlet-name>
+        <servlet-class>servlet.StatisticsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/UserLoginServlet</url-pattern>
   </servlet-mapping>
@@ -114,4 +118,8 @@
         <servlet-name>GetScore3</servlet-name>
         <url-pattern>/GetScore3</url-pattern>
     </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <url-pattern>/Statistics</url-pattern>
+  </servlet-mapping>
 </web-app>
