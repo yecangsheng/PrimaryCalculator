@@ -1,6 +1,7 @@
 package service;
 
 import entity.ExpRec;
+import entity.Expression;
 import entity.Record;
 import util.sql.DBSqlExe;
 
@@ -16,11 +17,18 @@ import java.util.Map;
 public class RecordServiceImp extends RecordService{
     @Override
     public int insertOneRecord(Record record) {
-        String sql = "INSERT INTO record(id,u_id,e_id,result,r_time,r_num,r_rank)" +
-                " VALUES(null,?,?,?,?,?,?)";
+        String sql = "INSERT INTO record(id,u_id,e_id,score,result,r_time,r_num,r_rank)" +
+                " VALUES(null,?,?,?,?,?,?,?)";
         DBSqlExe dbSqlExe = new DBSqlExe();
+        String sqlResult = "SELECT e_result FROM expression WHERE id = ?";
+        List<Map<String,Object>> list = dbSqlExe.exeQueryNTransaction(sqlResult,new Object[]{record.geteId()});
+        int score = 0;
+        String pResult = (String)list.get(0).get("e_result");
+        if(pResult.equals(record.getResult())){
+            score = 5;
+        }
         int re  = dbSqlExe.exeUpdateTransatcion(sql,
-                new Object[]{record.getuId(),record.geteId(),record.getResult(),
+                new Object[]{record.getuId(),record.geteId(),score,record.getResult(),
                 record.getDate(),record.getNum(),record.getR_rank()});
         return re;
     }

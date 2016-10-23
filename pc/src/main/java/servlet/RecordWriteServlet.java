@@ -49,9 +49,9 @@ public class RecordWriteServlet extends HttpServlet {
         Integer e_id = Integer.parseInt(request.getParameter("e_id"));
         //获取用户给出的答案
         String result = request.getParameter("result");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date = sdf.format(new Date());
-
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //String date = sdf.format(new Date());
+        String date = String.valueOf(System.currentTimeMillis());
         System.out.println(date);
         Record record = new Record(u_id,e_id,result,date,num,rank);
 
