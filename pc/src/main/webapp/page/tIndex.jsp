@@ -149,9 +149,9 @@
                     <i class="icon-desktop"></i> <span class="menu-text">
                 主页</span></a>
                 </li>
-                <li><a href="#" target="mainframe"> <i
+                <li><a href="<%=request.getContextPath()%>/GetScore1" target="mainframe"> <i
                         class="icon-desktop"></i> <span class="menu-text">
-                这个是空标签</span>
+                折线图</span>
                 </a>
                 </li>
                 <li><a href="#" target="mainframe"> <i
