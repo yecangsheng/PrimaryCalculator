@@ -46,7 +46,7 @@
     var myChart = echarts.init(document.getElementById('main2'));
     myChart.setOption({
         title: {
-            text: '小学生成绩历史',
+            text: '小学生平均成绩',
             subtext: '纯属虚构 ^_^'
         },
         tooltip: {

@@ -122,5 +122,4 @@
     <servlet-name>StatisticsServlet</servlet-name>
     <url-pattern>/Statistics</url-pattern>
   </servlet-mapping>
->>>>>>> yufujia
 </web-app>
