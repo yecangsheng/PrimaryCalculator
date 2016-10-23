@@ -154,9 +154,9 @@
                 折线图</span>
                 </a>
                 </li>
-                <li><a href="#" target="mainframe"> <i
+                <li><a href="<%=request.getContextPath()%>/Statistics?rank=1&refresh=0" target="mainframe"> <i
                         class="icon-desktop"></i> <span class="menu-text">
-                这个是空标签</span>
+                饼状图</span>
                 </a>
                 </li>
             </ul>
