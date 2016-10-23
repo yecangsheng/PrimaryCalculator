@@ -37,7 +37,8 @@ public class GetScore1 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         //首先获得用户的id
-        u_id = 1;
+        User user = (User) session.getAttribute("user");
+        u_id = user.getId();
         try {
             SqlOperation sqlOperation = new SqlOperation();
             SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
@@ -62,7 +63,6 @@ public class GetScore1 extends HttpServlet {
         }
         ObjectMapper objectMapper = new ObjectMapper();
         String result = objectMapper.writeValueAsString(list);
-        //System.out.println(result);
         request.setAttribute("result",result);
         response.setContentType("text/html;charset=utf-8");
         response.getWriter().print(result);
