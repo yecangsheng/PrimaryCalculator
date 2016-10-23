@@ -9,8 +9,8 @@
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="pc"/>
       <table id="2" parent="1" name="user"/>
-      <table id="3" parent="1" name="record"/>
-      <table id="4" parent="1" name="expression"/>
+      <table id="3" parent="1" name="expression"/>
+      <table id="4" parent="1" name="record"/>
       <column id="5" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
@@ -39,57 +39,61 @@
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="12" parent="3" name="e_id">
+      <column id="12" parent="3" name="e_expre">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="13" parent="3" name="e_result">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="14" parent="3" name="e_rank">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="13" parent="3" name="u_id">
+      <column id="15" parent="3" name="e_tip">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <key id="16" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="17" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="14" parent="3" name="result">
+      <column id="18" parent="4" name="e_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="19" parent="4" name="u_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="20" parent="4" name="score">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="4" name="result">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="15" parent="3" name="r_time">
+      <column id="22" parent="4" name="r_time">
         <mandatory>1</mandatory>
         <data-type>varchar(25)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="16" parent="3" name="r_num">
+      <column id="23" parent="4" name="r_num">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="17" parent="3" name="r_rank">
+      <column id="24" parent="4" name="r_rank">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <key id="18" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="19" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="20" parent="4" name="e_expre">
-        <mandatory>1</mandatory>
-        <data-type>varchar(50)</data-type>
-      </column>
-      <column id="21" parent="4" name="e_result">
-        <mandatory>1</mandatory>
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="22" parent="4" name="e_rank">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="23" parent="4" name="e_tip">
-        <data-type>varchar(100)</data-type>
-      </column>
-      <key id="24" parent="4" name="PRIMARY">
+      <key id="25" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

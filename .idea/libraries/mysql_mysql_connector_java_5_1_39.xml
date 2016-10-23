@@ -3,9 +3,11 @@
     <properties maven-id="mysql:mysql-connector-java:5.1.39" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/pc/src/lib/mysql-connector-java-5.1.39.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pc/src/lib/mysql-connector-java-5.1.39.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://$PROJECT_DIR$/pc/src/lib/mysql-connector-java-5.1.39-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/pc/src/lib/mysql-connector-java-5.1.39-sources.jar!/" />
     </SOURCES>
   </library>
