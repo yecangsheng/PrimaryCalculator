@@ -82,15 +82,7 @@
 
                     <ul
                             class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                        <li><a href="#"> <i class="icon-cog"></i> 设置
-                        </a></li>
-
-                        <li><a href="#"> <i class="icon-user"></i> 个人资料
-                        </a></li>
-
-                        <li class="divider"></li>
-
-                        <li><a href="#"> <i class="icon-off"></i> 退出
+                        <li><a href="../uls"> <i class="icon-off"></i> 退出
                         </a></li>
                     </ul></li>
             </ul>
