@@ -23,6 +23,7 @@
     <button id="start" >Refresh</button>
     <div id="timer" ></div>
 </div>
+<input type ="text" id ="rank"  style= "display: none" value = "<% out.print(application.getAttribute("rank"));%>"/>
 <script src="<%=request.getContextPath()%>/Statistics/js/rank.js"></script>
 </body>
 </html>

@@ -42,8 +42,7 @@
     <div id="chart" ></div>
 </div>
 <div style="">
-    <input type ="text" id ="pie"  value = "<% out.print(application.getAttribute("rank"));%>"/>
-    <input type ="text" id ="pi"  value = "<% out.print(application.getAttribute("pie"));%>"/>
+    <input type ="text" id ="pie"  style= "display: none" value = "<% out.print(application.getAttribute("pie"));%>"/>
 </div>
 <script src="<%=request.getContextPath()%>/Statistics/js/pie.js" charset="utf-8"> </script>
 

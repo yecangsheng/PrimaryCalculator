@@ -1,4 +1,6 @@
 var height = 250,width = 250;
+var rankValue = document.getElementById("rank").getAttribute("value");
+
 var options = {
   ease: "bounce",
   height: height,
@@ -52,7 +54,7 @@ var dt = new DashTimer('#timer');
 new Promise(function(resolve, reject) {
   dt.init(options).setData(data);
 }).then(d3.select(".init-values").attr('dy',height * 1/25))
-  .then(dt.start(1500,0,0.84));
+  .then(dt.start(1500,0,1 - parseInt(rankValue)));
 
 d3.select('.center')
   .style("margin","0")
@@ -60,6 +62,6 @@ d3.select('.center')
   .style("text-align","center")
   .style("font-weight", "normal");
 d3.select('#start').on('click', function(d) {
-  dt.start(1500,0,0.84);
+  dt.start(1500,0,1 - parseInt(rankValue));
 }).style("text-align","center")
   .style("margin-bottom","130px");

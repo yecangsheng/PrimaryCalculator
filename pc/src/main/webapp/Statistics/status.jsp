@@ -17,7 +17,7 @@
             学生成绩总体信息
         </h1>
     </div>
-    <div style = "margin-top:10px;float:left">
+    <div style = "margin-top:10px;">
         <div >
             <%@include file="pie.jsp" %>
         </div>
