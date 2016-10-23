@@ -21,13 +21,13 @@ public class UserServiceImp extends UserService{
         try{
             List<Map<String,Object>> list = dbConn.exeQueryNTransaction(sql,
                     new Object[]{user.getuMail(),user.getuPassword(),user.getuIdentity()});
-            if(list.size()>=1) {
+            if(!list.isEmpty()){
                 Map<String, Object> map = list.get(0);
                 user1 = new User();
                 user1.setId(Integer.parseInt(map.get("id").toString()));
                 user1.setuEmail(map.get("mail").toString());
                 user1.setuNickname(map.get("nickname").toString());
-                user.setuIdentity(Integer.parseInt(map.get("identity").toString()));
+                user1.setuIdentity(user.getuIdentity());
             }
         }catch(Exception e){
             e.printStackTrace();

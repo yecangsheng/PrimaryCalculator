@@ -26,7 +26,14 @@ public class UserLoginServlet extends javax.servlet.http.HttpServlet {
             System.out.println(user.toString());
             HttpSession session = request.getSession();
             session.setAttribute("user",user);
-            response.sendRedirect("page/index.jsp");
+            //不是学生
+            if(user.getuIdentity()<=1){
+                response.sendRedirect("page/index.jsp");
+            }else{
+                System.out.println(user.getuIdentity());
+                response.sendRedirect("page/tIndex.jsp");
+            }
+
         }
     }
 
