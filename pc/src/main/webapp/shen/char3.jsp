@@ -46,7 +46,7 @@
     var myChart3 = echarts.init(document.getElementById('main3'));
     myChart3.setOption({
         title: {
-            text: '小学生成绩历史',
+            text: '小学生成绩稳定性（方差）',
             subtext: '纯属虚构 ^_^'
         },
         tooltip: {
