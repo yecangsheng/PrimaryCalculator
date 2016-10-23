@@ -70,6 +70,10 @@
     <servlet-class>servlet.UserLogoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
+        <servlet-name>StatisticsServlet</servlet-name>
+        <servlet-class>servlet.StatisticsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/UserLoginServlet</url-pattern>
   </servlet-mapping>
@@ -97,12 +101,10 @@
         <servlet-name>GetTestResultServlet</servlet-name>
         <url-pattern>/gtrs</url-pattern>
     </servlet-mapping>
-<<<<<<< HEAD
   <servlet-mapping>
     <servlet-name>UserLogoutServlet</servlet-name>
     <url-pattern>/uls</url-pattern>
   </servlet-mapping>
-=======
     <servlet-mapping>
         <servlet-name>GetScore1</servlet-name>
         <url-pattern>/GetScore1</url-pattern>
@@ -116,6 +118,9 @@
         <servlet-name>GetScore3</servlet-name>
         <url-pattern>/GetScore3</url-pattern>
     </servlet-mapping>
-
->>>>>>> e9db0558304e448fe44febb4da4e24299f71ae50
+  <servlet-mapping>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <url-pattern>/Statistics</url-pattern>
+  </servlet-mapping>
+>>>>>>> yufujia
 </web-app>
