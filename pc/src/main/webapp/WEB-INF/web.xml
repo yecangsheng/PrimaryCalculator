@@ -69,7 +69,7 @@
     <servlet-name>UserLogoutServlet</servlet-name>
     <servlet-class>servlet.UserLogoutServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
+  <servlet>
         <servlet-name>StatisticsServlet</servlet-name>
         <servlet-class>servlet.StatisticsServlet</servlet-class>
     </servlet>

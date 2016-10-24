@@ -175,9 +175,13 @@ public class StatisticsServlet extends HttpServlet {
                     allScore[i++] = entry.getValue();
                 }
                 Arrays.sort(allScore);
-                for(j=allScore.length-1;allScore[j]!=map.get(u_id);j--);
-                System.out.println(j+ "   " + map.size() + "  " + pvsAll.size() +"  "+map.get(u_id));
-                refreshData = (allScore.length-j)*1.0/map.size() + "";
+                if(allScore.length > 0) {
+                    for (j = allScore.length - 1; allScore[j] != map.get(u_id); j--) ;
+                    System.out.println(j + "   " + map.size() + "  " + pvsAll.size() + "  " + map.get(u_id));
+                    refreshData = (allScore.length - j) * 1.0 / map.size() + "";
+                } else {
+                    refreshData  = "1.0";
+                }
 
             }catch(Exception e){
                 e.printStackTrace();
