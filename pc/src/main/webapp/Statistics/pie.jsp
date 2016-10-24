@@ -30,7 +30,7 @@
 <body>
 <div class="center">
     <h2 style="font-weight:normal">学生平均成绩统计</h2>
-    <form action="http://localhost:8080/Statistics" method="get">
+    <form action="http://localhost:8080/Statistics?refresh=0" method="get">
         <select name = "rank">
             <option value ="1">等级A</option>
             <option value ="2">等级B</option>

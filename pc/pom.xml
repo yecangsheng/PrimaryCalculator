@@ -72,6 +72,21 @@
       <artifactId>jackson-mapper-asl</artifactId>
       <version>1.8.3</version>
     </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.6.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson</groupId>
+      <artifactId>jackson-parent</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.6.3</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>pc</finalName>
