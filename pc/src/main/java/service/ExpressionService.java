@@ -24,4 +24,20 @@ public abstract class ExpressionService {
      * @return
      */
     public abstract int insertOneExpre(Expression expression);
+
+
+    /**
+     * 获取一个等级为rank的表达式,随机结果，该方法存在败笔
+     * @param rank 表达式等级
+     * @return 表达式
+     */
+    public abstract Expression obtainOneExp(int rank);
+
+    /**
+     * 获取多条等级为rank的表达式
+     * @param rank 表达式等级
+     * @return 表达式列表
+     */
+    public abstract List<Expression> obtainManyExp(int rank);
+
 }

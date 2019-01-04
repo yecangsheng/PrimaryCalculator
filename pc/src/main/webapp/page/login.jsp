@@ -181,7 +181,7 @@
                     <div class="space-6"></div>
                     <p>输入你的注册邮箱</p>
 
-                    <form id="register" action="" method="post">
+                    <form id="register" action="urs" method="post">
                       <fieldset>
                         <label class="block clearfix"> <span
                           class="block input-icon input-icon-right">
